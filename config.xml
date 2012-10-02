@@ -5,6 +5,6 @@
  
    <name>music-scale-js</name>
    <description>Javascript application to display various musical scales</description>
-   <content src="scale.html"/>
+   <content src="index.html"/>
  
 </widget>
