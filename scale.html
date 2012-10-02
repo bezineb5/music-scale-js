@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="lib/handlebars-1.0.rc.1.js"></script>
+		<script type="text/javascript" src="lib/ember-1.0.pre.min.js"></script>
+		<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+		<script type="text/javascript" src="lib/abcjs_basic_1.4-min.js"></script>
+		<script type="text/javascript" src="scale.js"></script>
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<title>Musical Scales</title>
+	</head>
+	<body>
+		<script type="text/x-handlebars">
+		{{view Ember.Select
+                          contentBinding="ScalesApp.allMappings"
+                          optionLabelPath="content.name"
+                          optionValuePath="content.name"
+                          prompt="Select the notation"
+                          selectionBinding="ScalesApp.configurationController.keyMapping"}}
+
+		{{view Ember.Select
+                          contentBinding="ScalesApp.allScales"
+                          optionLabelPath="content.name"
+                          optionValuePath="content.name"
+                          prompt="Select the scale"
+                          selectionBinding="ScalesApp.configurationController.scale"}}
+
+		{{view Ember.Select
+                          contentBinding="ScalesApp.configurationController.keyMapping.sharpNames"
+                          optionLabelPath="content.name"
+                          optionValuePath="content.id"
+                          prompt="Select the key"
+                          selectionBinding="ScalesApp.configurationController.key"}}
+						  
+		</script>
+		<div id="score"></div>
+	</body>
+</html>
