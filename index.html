@@ -13,29 +13,39 @@
 		<title>Musical Scales</title>
 	</head>
 	<body>
-		<script type="text/x-handlebars">
-		{{view Ember.Select
-                          contentBinding="ScalesApp.allMappings"
-                          optionLabelPath="content.name"
-                          optionValuePath="content.name"
-                          prompt="Select the notation"
-                          selectionBinding="ScalesApp.configurationController.keyMapping"}}
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
 
-		{{view Ember.Select
-                          contentBinding="ScalesApp.allScales"
-                          optionLabelPath="content.name"
-                          optionValuePath="content.name"
-                          prompt="Select the scale"
-                          selectionBinding="ScalesApp.configurationController.scale"}}
-
-		{{view Ember.Select
-                          contentBinding="ScalesApp.configurationController.keyMapping.sharpNames"
-                          optionLabelPath="content.name"
-                          optionValuePath="content.id"
-                          prompt="Select the key"
-                          selectionBinding="ScalesApp.configurationController.key"}}
-						  
-		</script>
+                <form class="navbar-form pull-left">
+            		<script type="text/x-handlebars">
+            		{{view Ember.Select
+                                      classNames="span3 offset1"
+                                      contentBinding="ScalesApp.allMappings"
+                                      optionLabelPath="content.name"
+                                      optionValuePath="content.name"
+                                      prompt="Select the notation"
+                                      selectionBinding="ScalesApp.configurationController.keyMapping"}}
+            
+            		{{view Ember.Select
+                                      classNames="span2"
+                                      contentBinding="ScalesApp.allScales"
+                                      optionLabelPath="content.name"
+                                      optionValuePath="content.name"
+                                      prompt="Select the scale"
+                                      selectionBinding="ScalesApp.configurationController.scale"}}
+            
+            		{{view Ember.Select
+                                      classNames="span2"
+                                      contentBinding="ScalesApp.configurationController.keyMapping.sharpNames"
+                                      optionLabelPath="content.name"
+                                      optionValuePath="content.id"
+                                      prompt="Select the key"
+                                      selectionBinding="ScalesApp.configurationController.key"}}
+            						  
+            		</script>
+                </form>
+            </div>
+        </div>
 		<div id="score"></div>
 	</body>
 </html>
